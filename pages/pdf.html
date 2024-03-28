@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عرض سعر pdf</title>
+    <link rel="stylesheet" href="../styles/pdf.css" />
+  </head>
+  <body>
+    <main id="page">
+      <h1>fax message</h1>
+      <div class="info">
+        <div class="left">
+          <div class="item">
+            <p class="label">to</p>
+            <span>:</span>
+            <p class="value" id="to"></p>
+          </div>
+          <div class="item">
+            <p class="label">form</p>
+            <span>:</span>
+            <p class="value" id="from"></p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="item">
+            <p class="label">fax.no.</p>
+            <span>:</span>
+            <p class="value" id="fax-num"></p>
+          </div>
+          <div class="item">
+            <p class="label">pages</p>
+            <span>:</span>
+            <p class="value" id="pages">1</p>
+          </div>
+          <div class="item">
+            <p class="label">date</p>
+            <span>:</span>
+            <p class="value" id="date"></p>
+          </div>
+          <div class="item">
+            <p class="label">ref.no.</p>
+            <span>:</span>
+            <p class="value" id="ref-no"></p>
+          </div>
+        </div>
+      </div>
+      <h3>تحية طيبة وبعد <span>،،،</span></h3>
+      <div class="subject">
+        <span class="label">الموضوع <span>:</span></span>
+        <span id="subject"></span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>البيان</th>
+            <th>العدد</th>
+            <th>السعر</th>
+            <th>المجموع</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+      <h4>ملاحظات هامه <span>:</span></h4>
+      <ul>
+        <li>الاسعار غير شامله ضريبة المبيعات 14%</li>
+        <li>
+          الاسعار شامله النقل والتركيب و السقالا ت وغير شامله مصدر الكهرباء
+        </li>
+        <li>عرض السعر ساري لمده 5 ايام من تاريخ ارساله</li>
+        <li>الحصر النهائى للكميه وفقا للمنفذ فعلي</li>
+      </ul>
+      <div class="html2pdf__page-break"></div>
+
+      <h4>الدفعات <span>:</span></h4>
+      <ul>
+        <li>%70 عند التعاقد</li>
+        <li>%20 عند التركيب</li>
+        <li>%10 عند الاستلام</li>
+      </ul>
+      <h3>وتفضلوا بقبول فائق الاحترام والتقدير،،،</h3>
+      <div class="manage">الاداره <br />ا / محمد يحيي <br />ا / طارق احمد</div>
+    </main>
+    <button id="download">تنزيل</button>
+    <script src="../scripts/pdf.js"></script>
+  </body>
+</html>
