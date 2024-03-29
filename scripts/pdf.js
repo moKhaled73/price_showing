@@ -4,7 +4,8 @@ const fromElement = document.getElementById("from");
 const subjectElement = document.getElementById("subject");
 const dateElement = document.getElementById("date");
 const tableBody = document.getElementById("table-body");
-const downloadBtn = document.getElementById("download");
+const saveBtn = document.getElementById("save");
+const backBtn = document.getElementById("back");
 
 if (!jsondata) {
   window.location = "../index.html";
@@ -12,7 +13,7 @@ if (!jsondata) {
 
 const { date, from, to, subject, statementArr, finalTotal } = jsondata;
 
-toElement.innerHTML = to;
+toElement.innerHTML = `عناية السادة/ ${to}`;
 fromElement.innerHTML = from;
 subjectElement.innerHTML = subject;
 dateElement.innerHTML = date;
@@ -52,6 +53,11 @@ trTotal.appendChild(tdTotal);
 trTotal.appendChild(tdValue);
 tableBody.appendChild(trTotal);
 
-downloadBtn.addEventListener("click", () => {
+saveBtn.addEventListener("click", () => {
+  // convert this page to pdf use jspdf library
   window.print();
+});
+
+backBtn.addEventListener("click", () => {
+  window.location = "../index.html";
 });

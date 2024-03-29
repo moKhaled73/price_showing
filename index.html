@@ -5,50 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>عرض سعر</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <h1>عرض سعر</h1>
     <form id="data-form">
       <div class="form-control">
         <label for="to">عنايه الساده</label>
-        <input type="text" id="to" />
+        <input type="text" id="to" required />
       </div>
+
       <div class="form-control">
         <label for="from">اسم الشركة</label>
         <input
           type="text"
           id="from"
+          required
           value="شركه جلاس ماس للسيكوريت والالومنيوم و المقاولات العمومية"
         />
       </div>
+
       <div class="form-control">
         <label for="date">التاريخ</label>
         <input type="date" id="date" value="" />
       </div>
+
       <div class="form-control">
         <label for="subject">الموضوع:</label>
-        <input type="text" id="subject" />
+        <input type="text" id="subject" required />
       </div>
+
       <div class="controls">
         <h3 class="statements">البنود</h3>
         <button id="add-statement">اضافة بند</button>
       </div>
-      <div id="inputs">
-        <div>
-          <input type="text" class="statement" placeholder="البيان" />
-          <input type="number" class="num-items" placeholder="الوحدة و العدد" />
-          <input type="number" class="price" placeholder="سعر الوحدة" />
-          <button>حذف</button>
-        </div>
-      </div>
+
+      <div id="inputs"></div>
+
       <button class="submit" type="submit">مراجعة</button>
     </form>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <button onclick="window.print()">print</button>
     <script src="scripts/main.js"></script>
   </body>
 </html>

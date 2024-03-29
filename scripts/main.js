@@ -3,25 +3,42 @@ let dateInput = document.getElementById("date");
 let addStatement = document.getElementById("add-statement");
 let inputs = document.getElementById("inputs");
 
+const addDate = () => {
+  let date = new Date();
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  let day = date.getDate();
+  return `${year}-${month < 10 ? "0" + month : month}-${
+    day < 10 ? "0" + day : day
+  }`;
+};
+
+dateInput.value = addDate();
+
 const addNewStatement = (statementObj) => {
   let div = document.createElement("div");
-  let statement = document.createElement("input");
+
+  let statement = document.createElement("textarea");
   statement.type = "text";
   statement.className = "statement";
   statement.placeholder = "البيان";
+
   let number = document.createElement("input");
   number.type = "number";
   number.classList = "num-items";
   number.placeholder = "الوحدة و العدد";
+
   let price = document.createElement("input");
   price.type = "number";
   price.className = "price";
   price.placeholder = "سعر الوحدة";
+
   let removeBtn = document.createElement("button");
   removeBtn.innerHTML = "حذف";
   removeBtn.addEventListener("click", (e) => {
     e.target.parentElement.remove();
   });
+
   if (statementObj) {
     statement.value = statementObj.statement;
     number.value = statementObj.number;
@@ -40,6 +57,7 @@ if (localStorage.getItem("data")) {
   dataForm.to.value = data.to;
   dataForm.subject.value = data.subject;
   dataForm.date.value = data.date;
+
   data.statementArr.forEach((statementObj) => {
     addNewStatement(statementObj);
   });
@@ -53,11 +71,10 @@ addStatement.addEventListener("click", (e) => {
 dataForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  let to = document.getElementById("to").value;
-  let from = document.getElementById("from").value;
-  let subject = document.getElementById("subject").value;
-  let date = document.getElementById("date").value;
-
+  let to = dataForm.to.value;
+  let from = dataForm.from.value;
+  let subject = dataForm.subject.value;
+  let date = dataForm.date.value;
   let statement = document.querySelectorAll(".statement");
   let number = document.querySelectorAll(".num-items");
   let price = document.querySelectorAll(".price");
